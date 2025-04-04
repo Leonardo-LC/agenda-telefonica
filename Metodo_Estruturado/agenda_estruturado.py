@@ -5,7 +5,8 @@ while True:
 
     try: 
         a = int(input(
-        'Digite 1 para Criar um contato ' \
+        'Bem vindo ao menu Central do programa Agenda'
+        '\nDigite 1 para Criar um contato ' \
         '\nDigite 2 para Listar os contato' \
         '\nDigite 3 para Editar um contato' \
         '\nDigite 4 para Remover um contato' \
@@ -15,16 +16,23 @@ while True:
 
     if a <= 0 or a > 5: #Caso inválido
         print('Digite um valor válido de 1 a 5')
+        continue
 
-    if a == 1: #Funcionalidade criar contato
+    elif a == 1: #Funcionalidade criar contato
         nome = input('Digite o nome do contato: ').upper()
-        contato = input('Digite o número de telefone do contato: ')
-        agenda[nome] = contato
-        print('Contato criado com sucesso !')
+        if nome in agenda:
+            print('Este contato já existe.')
+        else:
+            contato = input('Digite o número de telefone do contato: ')
+            agenda[nome] = contato
+            print('Contato criado com sucesso !')
 
     elif a == 2: #Listar Contatos
-        for key in agenda:
-            print(f'Nome : {key} , Telefone : {agenda[key]}')
+        if agenda:
+            for key in agenda:
+                print(f'Nome : {key} , Telefone : {agenda[key]}')
+        else:
+            print('Agenda vazia! Crie novos contatos')
     elif a == 3: #Editar contato
         nome = input('Digite o nome do contato: ').upper()
         if nome in agenda:
@@ -42,3 +50,5 @@ while True:
 
     elif a==5: #Funcionalidade sair
        break
+    input("Pressione Enter para continuar...")
+    print('\n\n\n\n\n\n\n\n')
