@@ -44,15 +44,25 @@ while True:
     elif a == 4: #Deletar contato
         nome = input('Digite o nome do contato: ').upper()
         if nome in agenda:
-            del agenda[nome]
-            print(f'Contato {nome} deletado com sucesso!')
+            while True:
+                confirmarDeletar = input(f"o contato {nome} será deletado PERMANENTEMENTE. Deseja continuar? [s/n]: ").lower()
+                if confirmarDeletar == 's':
+                    del agenda[nome]
+                    print(f'Contato {nome} deletado com sucesso!')
+                    break
+                elif confirmarDeletar == 'n':
+                    print(f"O contato não foi deletado.")
+                    break
+                else:
+                    print("É necessário digitar 's' para confirmar ou 'n' para cancelar a ação")
+
         else:
-            print('Este contato não existe, operação não efetuada.')
+            print('Este contato não existe.')
 
     elif a == 5: #Funcionalidade de pesquisar contato
         nome = input("Digite o nome do contato: ").upper()
         if nome in agenda:
-            print(f'Nome {nome}, Telefone: {contato}')
+            print(f'Nome {nome}, Telefone: {agenda[nome]}')
         else:
             print("Contato não encontrado.")
 
