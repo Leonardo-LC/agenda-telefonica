@@ -10,12 +10,13 @@ while True:
         '\nDigite 2 para Listar os contato' \
         '\nDigite 3 para Editar um contato' \
         '\nDigite 4 para Remover um contato' \
-        '\nDigite 5 para Sair\n'))
+        '\nDigite 5 para Pesquisar um contato' \
+        '\nDigite 6 para Sair\n'))
     except ValueError:
         a=0
 
-    if a <= 0 or a > 5: #Caso inválido
-        print('Digite um valor válido de 1 a 5')
+    if a <= 0 or a > 6: #Caso inválido
+        print('Digite um valor válido de 1 a 6')
         continue
 
     elif a == 1: #Funcionalidade criar contato
@@ -48,7 +49,14 @@ while True:
         else:
             print('Este contato não existe, operação não efetuada.')
 
-    elif a==5: #Funcionalidade sair
+    elif a == 5: #Funcionalidade de pesquisar contato
+        nome = input("Digite o nome do contato: ").upper()
+        if nome in agenda:
+            print(f'Nome {nome}, Telefone: {contato}')
+        else:
+            print("Contato não encontrado.")
+
+    elif a == 6: #Funcionalidade sair
        break
     input("Pressione Enter para continuar...")
     print('\n\n\n\n\n\n\n\n')
