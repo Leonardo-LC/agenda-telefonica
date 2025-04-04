@@ -31,15 +31,26 @@ while True:
     elif a == 2: #Listar Contatos
         if agenda:
             for key in agenda:
-                print(f'Nome : {key} , Telefone : {agenda[key]}')
+                print(f'Nome: {key.title()}, Telefone: {agenda[key]}')
         else:
             print('Agenda vazia! Crie novos contatos')
+
     elif a == 3: #Editar contato
         nome = input('Digite o nome do contato: ').upper()
         if nome in agenda:
             agenda[nome] = input('Digite o novo telefone do contato: ')
         else:
-            print('Este contato não existe, operação não efetuada.')
+            criarContato = input('Este contato não existe. Deseja cria-lo?: [s/n]: ').lower()
+            if criarContato == 's':
+                nome = input('Digite o nome do contato: ').upper()
+                if nome in agenda:
+                    print('Este contato já existe.')
+                else:
+                    contato = input('Digite o número de telefone do contato: ')
+                    agenda[nome] = contato
+                    print('Contato criado com sucesso !')
+            elif criarContato == 'n':
+                pass
 
     elif a == 4: #Deletar contato
         nome = input('Digite o nome do contato: ').upper()
@@ -57,14 +68,36 @@ while True:
                     print("É necessário digitar 's' para confirmar ou 'n' para cancelar a ação")
 
         else:
-            print('Este contato não existe.')
+            criarContato = input('Este contato não existe. Deseja cria-lo?: [s/n]: ').lower()
+            if criarContato == 's':
+                nome = input('Digite o nome do contato: ').upper()
+                if nome in agenda:
+                    print('Este contato já existe.')
+                else:
+                    contato = input('Digite o número de telefone do contato: ')
+                    agenda[nome] = contato
+                    print('Contato criado com sucesso !')
+            elif criarContato == 'n':
+                pass
 
-    elif a == 5: #Funcionalidade de pesquisar contato
+
+
+    elif a == 5: #Funcionalidade pesquisar contato
         nome = input("Digite o nome do contato: ").upper()
         if nome in agenda:
-            print(f'Nome {nome}, Telefone: {agenda[nome]}')
+            print(f'Nome: {nome.title()}, Telefone: {agenda[nome]}')
         else:
-            print("Contato não encontrado.")
+            criarContato = input('Este contato não existe. Deseja cria-lo?: [s/n]: ').lower()
+            if criarContato == 's':
+                nome = input('Digite o nome do contato: ').upper()
+                if nome in agenda:
+                    print('Este contato já existe.')
+                else:
+                    contato = input('Digite o número de telefone do contato: ')
+                    agenda[nome] = contato
+                    print('Contato criado com sucesso !')
+            elif criarContato == 'n':
+                pass
 
     elif a == 6: #Funcionalidade sair
        break
