@@ -1,4 +1,9 @@
+from packages.agenda import Agenda
 from packages.contato import Contato
 
-contato1 = Contato('NomeTeste','61 123')
-print(contato1)
+agenda = Agenda()
+nome = input('Digite seu nome: ')
+telefone = input('Digite sua telefone: ')
+contato = Contato(nome, telefone)
+
+print(contato)
