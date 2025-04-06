@@ -13,6 +13,14 @@ class Agenda:
         else:
             print("O contato já existe")
 
+    def listar_contatos(self):
+        if self.contatos:
+            print("Os contatos salvos são:")
+            for contato in self.contatos.values():
+                print(contato)
+        else:
+            print("Sua agenda não possui contatos salvos")
+
 
 
     
