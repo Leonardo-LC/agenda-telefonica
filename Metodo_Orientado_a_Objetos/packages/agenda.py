@@ -5,7 +5,8 @@ class Agenda:
     def __init__(self):
         self.contatos = {}
 
-    def criar_contato(self, nome):
+    def criar_contato(self):
+        nome = input('Digite o nome do contato: ')
         nome = nome.upper()
         if nome not in self.contatos:
             telefone = input('Digite o telefone: ')
