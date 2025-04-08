@@ -45,7 +45,7 @@ class Agenda:
             print(f'O contato não está listado na agenda')
 
     def  remover_contato(self):
-        del_contato = input(f'Digite o nome do contato: ')
+        del_contato = input(f'Digite o nome do contato: ').upper()
 
         if del_contato in self.contatos:
             while True:
