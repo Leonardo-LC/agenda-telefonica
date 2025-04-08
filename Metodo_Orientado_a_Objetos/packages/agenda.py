@@ -5,6 +5,15 @@ class Agenda:
     def __init__(self):
         self.contatos = {}
 
+    def menu():
+        print("\n====== MENU AGENDA ======")
+        print("1 - Criar contato")
+        print("2 - Listar contatos")
+        print("3 - Editar contato")
+        print("4 - Remover contato")
+        print("5 - Sair")
+        print("=========================")
+
     def criar_contato(self):
         nome = input('Digite o nome do contato: ')
         nome = nome.upper()
