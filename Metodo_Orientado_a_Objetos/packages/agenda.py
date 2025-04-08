@@ -1,3 +1,4 @@
+#importa a classe
 from .contato import Contato
 
 
