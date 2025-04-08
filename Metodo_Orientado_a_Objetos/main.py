@@ -2,17 +2,8 @@ from packages.agenda import Agenda
 
 agenda = Agenda()
 
-def menu():
-    print("\n====== MENU AGENDA ======")
-    print("1 - Criar contato")
-    print("2 - Listar contatos")
-    print("3 - Editar contato")
-    print("4 - Remover contato")
-    print("5 - Sair")
-    print("=========================")
-
 while True:
-    menu()
+    agenda.menu()
     opcao = input("Escolha uma opção: ")
     if opcao == '1':
         agenda.criar_contato()
