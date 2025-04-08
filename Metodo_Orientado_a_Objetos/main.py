@@ -24,12 +24,11 @@ while True:
         agenda.listar_contato()
 
     elif opcao == '3':
-        novo_nome = input('Digite o novo nome: ')
-        novo_telefone = input('Digite o novo telefone: ')
-        agenda.editar_contato(novo_nome, novo_telefone)
+
+        agenda.editar_contato()
 
     elif opcao == '4':
-        agenda.remover_contato(None)
+        agenda.remover_contato()
 
     elif opcao == '5':
         print("Encerrando a agenda...")

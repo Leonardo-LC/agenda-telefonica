@@ -21,8 +21,8 @@ class Agenda:
         else:
             print("Sua agenda não possui contatos salvos")
 
-    def  remover_contato(self,del_contato):
-        del_contato = input(f'Digite o nome do contato: ')
+    def  remover_contato(self):
+        del_contato = input(f'Digite o nome do contato que gostaria de remover: ').upper()
         if del_contato in self.contatos:
             while True:
                 confirmacao = input(f'O contato será excluido PERMANENTEMENTE. Deseja prosseguir? [s/n]: ')
@@ -34,7 +34,7 @@ class Agenda:
                     print(f'O contato não foi excluido')
                     break
                 else:
-                    print(f"É preciso digiat 's' para confirmar a exclusão ou 'n' para cancelar a exclusão")
+                    print(f"É preciso digitar 's' para confirmar a exclusão ou 'n' para cancelar a exclusão")
 
     def editar_contato(self):
         editar_contato = input(f'Qual contato deseja alterar? ').upper()
