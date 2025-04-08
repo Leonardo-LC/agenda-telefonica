@@ -26,13 +26,25 @@ class Agenda:
         if del_contato in self.contatos:
             while True:
                 confirmacao = input(f'O contato será excluido PERMANENTEMENTE. Deseja prosseguir? [s/n]: ')
-                if confirmacao == 's'
+                if confirmacao == 's':
                     del self.contatos[del_contato]
                     print(f'O contato foi excluido com sucesso!')
                     break
                 elif confirmacao == 'n':
                     print(f'O contato não foi excluido')
                     break
+                else:
+                    print(f"É preciso digiat 's' para confirmar a exclusão ou 'n' para cancelar a exclusão")
+
+    def editar_contato(self,novo_nome,novo_telefone):
+        editar_contato = input(f'Qual contato deseja alterar? ').upper()
+        if editar_contato in self.contatos:
+            self.contatos[editar_contato] = input(f'Digite o novo nome: ')
+            print(f'O contato foi alterado com sucesso!')
+        else:
+            print(f'O contato não está listado na agenda')
+
+
 
 
 
