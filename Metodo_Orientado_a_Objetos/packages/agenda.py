@@ -36,13 +36,17 @@ class Agenda:
                 else:
                     print(f"É preciso digiat 's' para confirmar a exclusão ou 'n' para cancelar a exclusão")
 
-    def editar_contato(self,novo_nome,novo_telefone):
+    def editar_contato(self):
         editar_contato = input(f'Qual contato deseja alterar? ').upper()
         if editar_contato in self.contatos:
-            self.contatos[editar_contato] = input(f'Digite o novo nome: ')
+            novo_nome = input(f'Digite o novo nome: ')
+            novo_telefone = input(f'Digite o novo telefone: ')
+            self.contatos.pop(editar_contato)
+            self.contatos[novo_nome.upper()] = Contato(novo_nome, novo_telefone)
             print(f'O contato foi alterado com sucesso!')
         else:
             print(f'O contato não está listado na agenda')
+
 
 
 

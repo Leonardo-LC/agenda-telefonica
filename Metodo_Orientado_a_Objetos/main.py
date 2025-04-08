@@ -29,7 +29,7 @@ while True:
         agenda.editar_contato(novo_nome, novo_telefone)
 
     elif opcao == '4':
-        agenda.remover_contato(None)  # passando None porque o nome é solicitado dentro da função
+        agenda.remover_contato(None)
 
     elif opcao == '5':
         print("Encerrando a agenda...")
