@@ -13,13 +13,30 @@ class Agenda:
         else:
             print("O contato já existe")
 
-    def listar_contatos(self):
+    def listar_contato(self):
         if self.contatos:
             print("Os contatos salvos são:")
             for contato in self.contatos.values():
                 print(contato)
         else:
             print("Sua agenda não possui contatos salvos")
+
+    def  remover_contato(self,del_contato):
+        del_contato = input(f'Digite o nome do contato: ')
+        if del_contato in self.contatos:
+            while True:
+                confirmacao = input(f'O contato será excluido PERMANENTEMENTE. Deseja prosseguir? [s/n]: ')
+                if confirmacao == 's'
+                    del self.contatos[del_contato]
+                    print(f'O contato foi excluido com sucesso!')
+                    break
+                elif confirmacao == 'n':
+                    print(f'O contato não foi excluido')
+                    break
+
+
+
+
 
 
 
