@@ -5,7 +5,7 @@ class Agenda:
     def __init__(self):
         self.contatos = {}
 
-    def menu():
+    def menu(self):
         print("\n====== MENU AGENDA ======")
         print("1 - Criar contato")
         print("2 - Listar contatos")
