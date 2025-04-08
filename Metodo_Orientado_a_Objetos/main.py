@@ -1,4 +1,3 @@
-from packages.contato import Contato
 from packages.agenda import Agenda
 
 agenda = Agenda()
