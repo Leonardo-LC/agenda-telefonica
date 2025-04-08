@@ -15,8 +15,7 @@ while True:
     menu()
     opcao = input("Escolha uma opção: ")
     if opcao == '1':
-        nome = input('Digite o nome do contato: ')
-        agenda.criar_contato(nome)
+        agenda.criar_contato()
 
     elif opcao == '2':
         agenda.listar_contato()
