@@ -15,8 +15,7 @@ class Agenda:
         print("5 - Sair")
         print("=========================")
 
-    def criar_contato(self):
-        nome = input('Digite o nome do contato: ')
+    def criar_contato(self,nome):
         nome = nome.upper()
         if nome not in self.contatos:
             telefone = input('Digite o telefone: ')
@@ -35,7 +34,6 @@ class Agenda:
 
     def editar_contato(self):
         nome_antigo = input(f'Qual contato deseja alterar? ').upper()
-        
         if nome_antigo in self.contatos:
             novo_nome = input(f'Digite o novo nome: ')
             novo_telefone = input(f'Digite o novo telefone: ')
@@ -46,13 +44,12 @@ class Agenda:
             print(f'O contato não está listado na agenda')
 
     def  remover_contato(self):
-        del_contato = input(f'Digite o nome do contato: ').upper()
-
-        if del_contato in self.contatos:
+        nome = input(f'Digite o nome do contato: ').upper()
+        if nome in self.contatos:
             while True:
                 confirmacao = input(f'O contato será excluido PERMANENTEMENTE. Deseja prosseguir? [s/n]: ')
                 if confirmacao == 's':
-                    del self.contatos[del_contato]
+                    del self.contatos[nome]
                     print(f'O contato foi excluido com sucesso!')
                     break
                 elif confirmacao == 'n':
@@ -61,12 +58,13 @@ class Agenda:
                 else:
                     print(f"É preciso digiat 's' para confirmar a exclusão ou 'n' para cancelar a exclusão")
         else:
-            criarContato = input('Este contato não existe. Deseja cria-lo?: [s/n]: ').lower()
-            if criarContato == 's':
-                nome = input('Digite o nome do contato: ')
-                self.criar_contato(nome)
-            elif criarContato == 'n':
-                pass
+            while True:
+                criarContato = input('Este contato não existe. Deseja cria-lo?: [s/n]: ').lower()
+                if criarContato == 's':
+                    self.criar_contato(nome)
+                    break
+                elif criarContato == 'n':
+                    break
 
 
 
